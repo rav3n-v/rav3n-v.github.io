@@ -2,40 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Blog</title>
+  <title>Vinayak's ML Blog</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Welcome to My Blog</h1>
+    <h1>Vinayak's Blog</h1>
     <nav>
       <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Posts</a>
-      <a href="#">Contact</a>
+      <a href="#about">About</a>
+      <a href="#posts">Posts</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
     <section class="intro">
-      <h2>Hello there 👋</h2>
-      <p>This is my personal blog where I share thoughts, tutorials, and cool stuff I learn.</p>
+      <h2>👋 Welcome!</h2>
+      <p>
+        Explore Machine Learning, Deep Learning, Python, and Mathematics explained intuitively. I write about what I learn and teach what I know.
+      </p>
     </section>
 
-    <section class="posts">
+    <section id="posts" class="posts">
+      <h2>📝 Recent Posts</h2>
       <article>
-        <h3>✨ My First Blog Post</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Read more...</a></p>
+        <h3>Understanding Gradient Descent</h3>
+        <p>A deep dive into the core optimization algorithm in ML. <a href="#">Read more...</a></p>
       </article>
       <article>
-        <h3>🚀 Getting Started with Web Dev</h3>
-        <p>A quick guide on how I built this blog using HTML & CSS. <a href="#">Read more...</a></p>
+        <h3>Linear Algebra for Machine Learning</h3>
+        <p>Vectors, matrices, and everything in between. <a href="#">Read more...</a></p>
       </article>
+    </section>
+
+    <section id="about" class="about">
+      <h2>👨‍💻 About Me</h2>
+      <div class="about-container">
+        <img src="images/profile.jpg" alt="Vinayak's Photo">
+        <p>
+          Hi! I'm <strong>Vinayak D.</strong>, a mathematics postgrad and ML enthusiast. I break down complex topics into simple ideas — from neural networks to the beauty of math. Stick around!
+        </p>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 My Blog | Made with ❤️</p>
+    <p>© 2025 Vinayak's Blog • Built with ❤️ and curiosity</p>
   </footer>
 </body>
 </html>
