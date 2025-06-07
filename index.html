@@ -24,6 +24,7 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     header {
@@ -35,6 +36,13 @@
       background: linear-gradient(145deg, #0e0e0e, #121212);
       text-align: center;
       padding: 0 20px;
+      transition: transform 0.8s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    header.shifted {
+      transform: translateX(-100%);
     }
 
     header h1 {
@@ -65,112 +73,60 @@
       color: #000;
     }
 
-    .section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    .posts {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .post-card {
-      background: var(--card-bg);
-      border-radius: 15px;
+    .blog-container {
+      position: absolute;
+      top: 0;
+      left: 100vw;
+      width: 100vw;
+      height: 100vh;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       padding: 20px;
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: transform 0.3s;
+      transition: left 0.8s ease;
+      z-index: 1;
     }
 
-    .post-card:hover {
-      transform: translateY(-5px);
+    .blog-container.visible {
+      left: 0;
     }
 
-    .post-card h3 {
-      font-size: 1.2rem;
+    .blog-container h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
       color: var(--accent);
     }
 
-    .about, .stack {
+    .blog-container p {
+      font-size: 1.2rem;
+      max-width: 600px;
       text-align: center;
-    }
-
-    .stack-icons {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .stack-icons img {
-      width: 40px;
-      height: 40px;
     }
 
     footer {
-      text-align: center;
-      padding: 40px 20px;
-      background: #101010;
-      font-size: 0.9rem;
-      color: #888;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <header>
+  <header id="mainHeader">
     <h1>Hi, I'm Vinayak D.</h1>
     <p>Mathematician | Deep Learning Enthusiast | Web Dev Learner | Blogging in LaTeX</p>
-    <button class="cta">Explore My Blog</button>
+    <button class="cta" onclick="showBlogs()">Explore My Blog</button>
   </header>
 
-  <section class="section">
+  <div class="blog-container" id="blogContainer">
     <h2>Recent Blog Posts</h2>
-    <div class="posts">
-      <div class="post-card">
-        <h3>Understanding Backpropagation</h3>
-        <p>A step-by-step breakdown of the math behind neural network training.</p>
-      </div>
-      <div class="post-card">
-        <h3>Matrix Multiplication Types</h3>
-        <p>Clarifying dot, Hadamard, and outer products with intuition and examples.</p>
-      </div>
-      <div class="post-card">
-        <h3>Entropy vs Cross-Entropy</h3>
-        <p>When uncertainty meets loss functions in deep learning.</p>
-      </div>
-    </div>
-  </section>
+    <p>Read my intuitive articles on deep learning, matrix algebra, and math visualizations — written to teach and inspire.</p>
+  </div>
 
-  <section class="section about">
-    <h2>About Me</h2>
-    <p>I'm an MSc Mathematics student passionate about making complex topics intuitive. From neural networks to matrix algebra, I write blogs to simplify the deep stuff for learners like me.</p>
-  </section>
-
-  <section class="section stack">
-    <h2>Tools I Use</h2>
-    <div class="stack-icons">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg" alt="LaTeX" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" />
-    </div>
-  </section>
-
-  <footer>
-    © 2025 Vinayak D. | GitHub: @vinayak-math (placeholder)
-  </footer>
+  <script>
+    function showBlogs() {
+      document.getElementById('mainHeader').classList.add('shifted');
+      document.getElementById('blogContainer').classList.add('visible');
+    }
+  </script>
 </body>
 </html>
