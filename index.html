@@ -2,75 +2,40 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>For You 💖</title>
-  <style>
-    body {
-      background: #ffe6f0;
-      font-family: 'Comic Sans MS', cursive;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      flex-direction: column;
-    }
-
-    .heart {
-      width: 100px;
-      height: 90px;
-      position: relative;
-      animation: beat 1s infinite;
-    }
-
-    .heart::before,
-    .heart::after {
-      content: "";
-      width: 100px;
-      height: 90px;
-      background: red;
-      position: absolute;
-      border-radius: 50px 50px 0 0;
-    }
-
-    .heart::before {
-      left: 100px;
-      transform: rotate(-45deg);
-      transform-origin: 0 100%;
-    }
-
-    .heart::after {
-      left: 0;
-      transform: rotate(45deg);
-      transform-origin: 100% 100%;
-    }
-
-    @keyframes beat {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-    }
-
-    h1 {
-      color: #ff3399;
-      margin-top: 30px;
-      text-align: center;
-    }
-
-    p {
-      color: #cc0066;
-      font-size: 1.2em;
-      text-align: center;
-      margin-top: 10px;
-      max-width: 300px;
-    }
-  </style>
+  <title>My Blog</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  
-  <h1>Hi swii</h1>
-  <p>I made this little page, was just playig around with stuff.</p>
+  <header>
+    <h1>Welcome to My Blog</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Posts</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Hello there 👋</h2>
+      <p>This is my personal blog where I share thoughts, tutorials, and cool stuff I learn.</p>
+    </section>
+
+    <section class="posts">
+      <article>
+        <h3>✨ My First Blog Post</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="#">Read more...</a></p>
+      </article>
+      <article>
+        <h3>🚀 Getting Started with Web Dev</h3>
+        <p>A quick guide on how I built this blog using HTML & CSS. <a href="#">Read more...</a></p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 My Blog | Made with ❤️</p>
+  </footer>
 </body>
 </html>
