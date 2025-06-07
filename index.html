@@ -1,54 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Vinayak's ML Blog</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vinayak D | Math Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0e0e0e;
+      --accent: #00ffc3;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --text: #f0f0f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(145deg, #0e0e0e, #121212);
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--accent);
+    }
+
+    header p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin-top: 10px;
+    }
+
+    .cta {
+      margin-top: 30px;
+      padding: 12px 28px;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .cta:hover {
+      background: var(--accent);
+      color: #000;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .post-card {
+      background: var(--card-bg);
+      border-radius: 15px;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: transform 0.3s;
+    }
+
+    .post-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .post-card h3 {
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    .about, .stack {
+      text-align: center;
+    }
+
+    .stack-icons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .stack-icons img {
+      width: 40px;
+      height: 40px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #101010;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Vinayak's Blog</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#about">About</a>
-      <a href="#posts">Posts</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <h1>Hi, I'm Vinayak D.</h1>
+    <p>Mathematician | Deep Learning Enthusiast | Web Dev Learner | Blogging in LaTeX</p>
+    <button class="cta">Explore My Blog</button>
   </header>
 
-  <main>
-    <section class="intro">
-      <h2>👋 Welcome!</h2>
-      <p>
-        Explore Machine Learning, Deep Learning, Python, and Mathematics explained intuitively. I write about what I learn and teach what I know.
-      </p>
-    </section>
-
-    <section id="posts" class="posts">
-      <h2>📝 Recent Posts</h2>
-      <article>
-        <h3>Understanding Gradient Descent</h3>
-        <p>A deep dive into the core optimization algorithm in ML. <a href="#">Read more...</a></p>
-      </article>
-      <article>
-        <h3>Linear Algebra for Machine Learning</h3>
-        <p>Vectors, matrices, and everything in between. <a href="#">Read more...</a></p>
-      </article>
-    </section>
-
-    <section id="about" class="about">
-      <h2>👨‍💻 About Me</h2>
-      <div class="about-container">
-        <img src="images/profile.jpg" alt="Vinayak's Photo">
-        <p>
-          Hi! I'm <strong>Vinayak D.</strong>, a mathematics postgrad and ML enthusiast. I break down complex topics into simple ideas — from neural networks to the beauty of math. Stick around!
-        </p>
+  <section class="section">
+    <h2>Recent Blog Posts</h2>
+    <div class="posts">
+      <div class="post-card">
+        <h3>Understanding Backpropagation</h3>
+        <p>A step-by-step breakdown of the math behind neural network training.</p>
       </div>
-    </section>
-  </main>
+      <div class="post-card">
+        <h3>Matrix Multiplication Types</h3>
+        <p>Clarifying dot, Hadamard, and outer products with intuition and examples.</p>
+      </div>
+      <div class="post-card">
+        <h3>Entropy vs Cross-Entropy</h3>
+        <p>When uncertainty meets loss functions in deep learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about">
+    <h2>About Me</h2>
+    <p>I'm an MSc Mathematics student passionate about making complex topics intuitive. From neural networks to matrix algebra, I write blogs to simplify the deep stuff for learners like me.</p>
+  </section>
+
+  <section class="section stack">
+    <h2>Tools I Use</h2>
+    <div class="stack-icons">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg" alt="LaTeX" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" />
+    </div>
+  </section>
 
   <footer>
-    <p>© 2025 Vinayak's Blog • Built with ❤️ and curiosity</p>
+    © 2025 Vinayak D. | GitHub: @vinayak-math (placeholder)
   </footer>
 </body>
 </html>
