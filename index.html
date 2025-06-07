@@ -1,9 +1,76 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <h1>Hi</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You 💖</title>
+  <style>
+    body {
+      background: #ffe6f0;
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      flex-direction: column;
+    }
+
+    .heart {
+      width: 100px;
+      height: 90px;
+      position: relative;
+      animation: beat 1s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 100px;
+      height: 90px;
+      background: red;
+      position: absolute;
+      border-radius: 50px 50px 0 0;
+    }
+
+    .heart::before {
+      left: 100px;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+
+    .heart::after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+
+    @keyframes beat {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+    }
+
+    h1 {
+      color: #ff3399;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    p {
+      color: #cc0066;
+      font-size: 1.2em;
+      text-align: center;
+      margin-top: 10px;
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="heart"></div>
+  <h1>You're the ❤️ of my life</h1>
+  <p>I made this little page just to say how much you mean to me!</p>
+</body>
 </html>
