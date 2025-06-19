@@ -82,6 +82,12 @@
     .post h2 {
       color: var(--accent);
       margin-bottom: 0.5rem;
+
+    }
+    .post h3 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+        font-size: 1.1rem;
     }
 
     .post p {
