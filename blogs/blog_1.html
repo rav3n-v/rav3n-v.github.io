@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Post - Dark Theme</title>
+  <link rel="stylesheet" href="../styles_blog.css" />
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body class="dark-theme">
+  <header role="banner">
+    <div class="header-container">
+      <h1>My Math Blog</h1>
+      <nav role="navigation">
+        <a href="../index.html" class="nav-link" aria-label="Back to Home">Home</a>
+      </nav>
+    </div>
+    <p class="subtitle">Exploring ideas through equations</p>
+  </header>
+
+  <main role="main">
+    <article role="article" aria-labelledby="post-title">
+      <h2 id="post-title">Understanding the Softmax Function</h2>
+      <p class="meta">Posted on June 19, 2025</p>
+
+      <p>The softmax function is a key component in many machine learning models. It is defined as:</p>
+      <div class="math">
+        \[ \text{softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^K e^{z_j}} \]
+      </div>
+
+      <p>This turns a vector of values into a probability distribution.</p>
+
+      <p>We also often use the numerically stable version:</p>
+      <div class="math">
+        \[ \text{softmax}(z_i) = \frac{e^{z_i - \max(z)}}{\sum_{j=1}^K e^{z_j - \max(z)}} \]
+      </div>
+
+      <p>This helps prevent numerical overflow.</p>
+    </article>
+  </main>
+
+  <footer role="contentinfo">
+    <p>
+  © 2025 Vinayak Devesan. Content licensed under
+  <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">
+    CC BY 4.0
+  </a>.
+</p>
+  </footer>
+</body>
+
+</html>

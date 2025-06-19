@@ -91,7 +91,7 @@
 
     .post a {
       color: var(--text);
-      text-decoration: underline;
+      text-decoration: None;
     }
 
     @media (max-width: 768px) {
@@ -110,4 +110,7 @@
     }
 #profile{
     text-align: center;
+}
+a{
+    text-decoration:None;
 }
