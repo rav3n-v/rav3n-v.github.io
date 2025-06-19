@@ -3,23 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vinayak D | Math Blog</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>My Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <header>
-    <h1>
-      Blog
-    </h1>
-    <p>
-      Experimental
-    </p>
-  </header>
-<main>
-  <p>This is just an experimental blog</p>
+  <aside class="sidebar" role="complementary" aria-label="Profile sidebar">
+    <div id="profile">
+      <img src="profile_image.png" alt="Profile Picture">
+      <h2>Vinayak D</h2>
+      <p class="bio">Math enthusiast, aspiring ML engineer. I write about AI, math, and tech.</p>
+    </div>
+    <nav class="social-links" aria-label="Social media links">
+      <a href="#" title="GitHub" aria-label="GitHub">🐙</a>
+      <a href="#" title="LinkedIn" aria-label="LinkedIn">🔗</a>
+      <a href="#" title="Twitter" aria-label="Twitter">🐦</a>
+    </nav>
+  </aside>
 
-</main>
+  <main class="content" role="main" aria-label="Blog content">
+    <article class="post" aria-label="Blog post: Understanding Softmax">
+      <h2>Understanding Softmax & Numerical Stability</h2>
+      <p>Softmax is used in classification problems. A stable version avoids overflow errors. <a href="#">Read more</a></p>
+    </article>
+
+    <article class="post" aria-label="Blog post: Gradient Descent">
+      <h2>Intro to Gradient Descent Variants</h2>
+      <p>Learn about batch, stochastic, and mini-batch gradient descent with practical examples. <a href="#">Read more</a></p>
+    </article>
+
+    <article class="post" aria-label="Blog post: LaTeX to Web">
+      <h2>From LaTeX to Web: Publishing Math Blogs</h2>
+      <p>How to convert LaTeX documents into blog posts with clean formatting. <a href="#">Read more</a></p>
+    </article>
+  </main>
 </body>
 </html>
