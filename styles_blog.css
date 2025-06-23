@@ -62,8 +62,8 @@ h2 {
 h3 {
   font-size: 1.25rem;
   color: #ffffff;
-  border-bottom: 2px solid #4db8ff;
-  padding-bottom: 0.3rem;
+  padding-bottom: 0.1rem;
+  margin-bottom: 0.1rem;
 }
 
 .meta {
@@ -183,7 +183,6 @@ pre {
   margin-top: 0;
   font-size: 1.1rem;
   color: #ffffff;
-  border-bottom: 1px solid #333;
   padding-bottom: 0.5rem;
 }
 
@@ -207,4 +206,18 @@ pre {
 }
 html {
   scroll-behavior: smooth;
+}
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* spacing between images */
+  margin-top: 20px;
+  flex-wrap: wrap; /* allows wrap on smaller screens */
+}
+
+.image-row img {
+  width: 30%; /* adjust based on layout needs */
+  height: auto;
+  border-radius: 8px; /* optional: rounded corners */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* optional: subtle shadow */
 }
