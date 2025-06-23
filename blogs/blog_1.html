@@ -53,9 +53,11 @@
       <svg viewBox="0 0 2000 800"  xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><g transform="translate(-1171.076442916673,-622.566591004857) scale(2.2973967099940733)"><path class="link" marker-end="" d="M800,345.5, 980,425.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,345.5, 980,465.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,385.5, 980,425.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,385.5, 980,465.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,425.5, 980,425.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,425.5, 980,465.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,465.5, 980,425.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,465.5, 980,465.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,505.5, 980,425.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,505.5, 980,465.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,545.5, 980,425.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,545.5, 980,465.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M980,425.5, 1160,445.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M980,465.5, 1160,445.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><circle r="10" class="node" id="0_0" cx="800" cy="345.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><circle r="10" class="node" id="0_1" cx="800" cy="385.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><circle r="10" class="node" id="0_2" cx="800" cy="425.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><circle r="10" class="node" id="0_3" cx="800" cy="465.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><circle r="10" class="node" id="0_4" cx="800" cy="505.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><circle r="10" class="node" id="0_5" cx="800" cy="545.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><circle r="10" class="node" id="1_0" cx="980" cy="425.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><circle r="10" class="node" id="1_1" cx="980" cy="465.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><circle r="10" class="node" id="2_0" cx="1160" cy="445.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><text class="text" dy=".35em" x="765" y="585.5" style="font-size: 12px;">Input Layer ∈ ℝ⁶</text><text class="text" dy=".35em" x="945" y="585.5" style="font-size: 12px;">Hidden Layer ∈ ℝ²</text><text class="text" dy=".35em" x="1125" y="585.5" style="font-size: 12px;">Output Layer ∈ ℝ¹</text></g><defs><marker id="arrow" viewBox="0 -5 10 10" markerWidth="7" markerHeight="7" orient="auto" refX="40"><path d="M0,-5L10,0L0,5" style="stroke: rgb(80, 80, 80); fill: none;"/></marker></defs></svg>
       </div>
       <h2 id="introduction">Introduction</h2>
-        <p>Neural Networks are a fundamental concept in deep learning. The structure above takes in 5 inputs and produces a single output helping us classify data with 5 features.This is a very rudimentary structure of Neural Network but lets get started with this</p>
-      <h2 id="forward-propagation">Foward Propogation</h2>
-      <p> Mathematics behind this structure is very interesting. Let's call our input as X, hidden layer as H, and ouput as Y.</p>
+        <p>Neural Networks are a fundamental concept in deep learning.
+          The structure above takes in 5 inputs and produces a single output helping us classify data with 5 features.
+          This is a very rudimentary structure of Neural Network, but let's get started with this</p>
+      <h2 id="forward-propagation">Forward Propagation</h2>
+      <p> Mathematics behind this structure is very interesting. Let's call our input as X, hidden layer as H, and output as Y.</p>
       <div class="math">
         \[X= \begin{bmatrix}
         x_1 \\
@@ -87,7 +89,7 @@
     W_2 = \begin{bmatrix}
     w_{11} \\ w_{12} \end{bmatrix} \]
   </div>
-      <p>Those familiar with matrix multiplication should be able to question y do we need hidden layer. We could have just used a single layer neural network.
+      <p>If you're familiar with matrix multiplication, you might wonder why we need a hidden layer at all?. We could have just used a single layer neural network.
         Yes we can. To get more complex structures, we use an activation function. Therefore, turning our linear equation into a non-linear equation.</p>
       <h2 id ="activation">Activation Function</h2>
       Let's take a simple example of tanh activation function.
@@ -113,8 +115,8 @@
       <p>By comparing the network’s predictions to the actual outputs in the training data, we adjust the weights in such a way that the error is minimized.
         In essence, learning is the process of tuning the weights so that the network performs well on the given task.</p>
       <h2 id="loss">Loss Function</h2>
-      <p>oss Functions are used to compare the ”distances” between the target values and output
-of Neural Network. There are a wide variety of loss functions used. We will see use MSE(Mean squared Error) for now</p>
+      <p>Loss Functions are used to compare the “distances” between the target values and output
+of Neural Network. There are a wide variety of loss functions. We will see use MSE(Mean squared Error) for now</p>
       <div class="math">
         \[MSE = \frac{1}{2n}\sum_{i=1}^{n}(y_i - \hat{y_i})^2\]
       </div>
@@ -136,7 +138,9 @@ of Neural Network. There are a wide variety of loss functions used. We will see 
 
       </div>
       where \(w_i\) is the weight at iteration \(i\) and \(\alpha\) is the learning rate.
-      Gradient descent is comparitively simple weight updation rule. We will see more complicated weight updation and Loss functions in the upcoming Blogs.
+      Gradient descent is a comparitively simple weight update rule.
+      We’ll explore more advanced weight update rules and loss functions in upcoming blog posts.
+
       <h2>References</h2>
       <ol>
   <li id="ref1">
