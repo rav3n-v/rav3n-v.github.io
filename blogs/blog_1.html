@@ -113,9 +113,45 @@
       <p>By comparing the network’s predictions to the actual outputs in the training data, we adjust the weights in such a way that the error is minimized.
         In essence, learning is the process of tuning the weights so that the network performs well on the given task.</p>
       <h2 id="loss">Loss Function</h2>
+      <p>oss Functions are used to compare the ”distances” between the target values and output
+of Neural Network. There are a wide variety of loss functions used. We will see use MSE(Mean squared Error) for now</p>
+      <div class="math">
+        \[MSE = \frac{1}{2n}\sum_{i=1}^{n}(y_i - \hat{y_i})^2\]
+      </div>
+      <p>Where n is the number of training examples, \(y_i\) is the actual output and \(\hat{y_i}\) is the predicted output.</p>
 
 
       <h2 id="backpropagation">Backpropagation</h2>
+      <p>Backpropagation is the process of calculating the gradient of the loss function with respect to the weights.
+        This is done by iteratively calculating the gradient of the loss function with respect to each weight and then updating the weights accordingly.</p>
+      <p>The gradient of the loss function with respect to a weight \(w_i\) is given by</p>
+      <div class="math">
+        \[dW_i = \frac{\partial L}{\partial w_i} = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y_i})\frac{\partial}{\partial w_i}y_i\]
+      </div>
+      <h2>Gradient Descent</h2>
+      <p>Gradient descent is a simple algorithm for optimizing a loss function.
+        It is a simple iterative process that starts with an initial set of weights and iteratively updates the weights based on the gradient of the loss function.</p>
+      <div class="math">
+        \[w_{i+1} = w_i - \alpha \frac{\partial L}{\partial w_i}\]
+
+      </div>
+      where \(w_i\) is the weight at iteration \(i\) and \(\alpha\) is the learning rate.
+      Gradient descent is comparitively simple weight updation rule. We will see more complicated weight updation and Loss functions in the upcoming Blogs.
+      <h2>References</h2>
+      <ol>
+  <li id="ref1">
+    Charu C. Aggarwal, <em>Linear Algebra and Optimization for Machine Learning</em>. Springer Cham, 2020.
+    <a href="https://doi.org/10.1007/978-3-030-40344-7" target="_blank" rel="noopener noreferrer">https://doi.org/10.1007/978-3-030-40344-7</a>
+  </li>
+        <li id="ref2">
+    Goodfellow, I., Bengio, Y., & Courville, A. (2016).
+    <em>Deep Learning</em>. MIT Press.
+    <a href="http://www.deeplearningbook.org" target="_blank" rel="noopener noreferrer">
+      http://www.deeplearningbook.org
+    </a>
+  </li>
+
+</ol>
     </article>
 
   </main>
