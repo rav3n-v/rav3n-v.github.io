@@ -81,14 +81,14 @@
           Dimension of W_1 and W_2 are 5x2 and 2x1 respectively.</p>
   <div class="math">
     \[ W_1 = \begin{bmatrix}
-    w_{11} & w_{12} \\
-    w_{21} & w_{22} \\
-    w_{31} & w_{32} \\
-    w_{41} & w_{42} \\
-    w_{51} & w_{52} \\
+    w^1_{11} & w^1_{12} \\
+    w^1_{21} & w^1_{22} \\
+    w^1_{31} & w^1_{32} \\
+    w^1_{41} & w^1_{42} \\
+    w^1_{51} & w^1_{52} \\
     \end{bmatrix} \quad
     W_2 = \begin{bmatrix}
-    w_{11} \\ w_{12} \end{bmatrix} \]
+    w^2_{11} \\ w^2_{12} \end{bmatrix} \]
   </div>
       <p>If you're familiar with matrix multiplication, you might wonder why we need a hidden layer at all?. We could have just used a single layer neural network.
         Yes we can. To get more complex structures, we use an activation function. Therefore, turning our linear equation into a non-linear equation.</p>
@@ -100,8 +100,8 @@
       <p>Applying this to the hidden layer gives us.</p>
       <div class="math">
         \[H = tanh(W_1^TX) = \begin{bmatrix}
-        tanh(w_{11}x_1 + w_{12}x_2 + w_{13}x_3 + w_{14}x_4 + w_{15}x_5) \\
-        tanh(w_{21}x_1 + w_{22}x_2 + w_{23}x_3 + w_{24}x_4 + w_{25}x_5) \\
+        tanh(w^1_{11}x_1 + w^1_{12}x_2 + w^1_{13}x_3 + w^1_{14}x_4 + w^1_{15}x_5) \\
+        tanh(w^1_{21}x_1 + w^1_{22}x_2 + w^1_{23}x_3 + w^1_{24}x_4 + w^1_{25}x_5) \\
         \end{bmatrix} \]
       </div>
       <p>
@@ -129,13 +129,13 @@ of Neural Network. There are a wide variety of loss functions. We will see use M
         This is done by iteratively calculating the gradient of the loss function with respect to each weight and then updating the weights accordingly.</p>
       <p>The gradient of the loss function with respect to a weight \(w_i\) is given by</p>
       <div class="math">
-        \[dW_i = \frac{\partial L}{\partial w_i} = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y_i})\frac{\partial}{\partial w_i}y_i\]
+        \[dW_i = \frac{\partial L}{\partial W_i} = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y_i})\frac{\partial}{\partial W_i}y_i\]
       </div>
       <h2>Gradient Descent</h2>
       <p>Gradient descent is a simple algorithm for optimizing a loss function.
         It is a simple iterative process that starts with an initial set of weights and iteratively updates the weights based on the gradient of the loss function.</p>
       <div class="math">
-        \[w_{i+1} = w_i - \alpha \frac{\partial L}{\partial w_i}\]
+        \[W_{i+1} = W_i - \alpha \frac{\partial L}{\partial W_i}\]
 
       </div>
         <p>
