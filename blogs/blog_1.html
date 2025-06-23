@@ -13,42 +13,111 @@
 </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog Post - Dark Theme</title>
+  <meta name="description" content="A beginner-friendly introduction to neural networks with SVG visualization and mathematical explanation.">
+
+  <title>Deep Learning -Neural Network</title>
   <link rel="stylesheet" href="../styles_blog.css" />
   <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 </head>
 
 <body class="dark-theme">
   <header role="banner">
     <div class="header-container">
-      <h1>My Math Blog</h1>
+      <h1>Deep Learning</h1>
       <nav role="navigation">
         <a href="../index.html" class="nav-link" aria-label="Back to Home">Home</a>
       </nav>
     </div>
-    <p class="subtitle">Exploring ideas through equations</p>
+    <p class="subtitle">Mathematics behind AI</p>
   </header>
 
   <main role="main">
-    <article role="article" aria-labelledby="post-title">
-      <h2 id="post-title">Understanding the Softmax Function</h2>
-      <p class="meta">Posted on June 19, 2025</p>
-
-      <p>The softmax function is a key component in many machine learning models. It is defined as:</p>
-      <div class="math">
-        \[ \text{softmax}(z_i) = \frac{e^{z_i}}{\sum_{j=1}^K e^{z_j}} \]
+    <aside class="toc" role="complementary" aria-label="Navigation">
+    <h3>On this page</h3>
+    <ul>
+      <li><a href="#post-title">Neural Network</a></li>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#forward-propagation">Forward Propagation</a></li>
+      <li><a href="#learning">How Neural Networks Learn?</a></li>
+      <li><a href="#loss">Loss Function</a></li>
+      <li><a href="#activation">Activation Function</a></li>
+      <li><a href="#backpropagation">Back Propagation</a></li>
+    </ul>
+  </aside>
+    <article role="article" aria-labelledby="post-title" class="content">
+      <h2 id="post-title">Neural Network</h2>
+      <p class="meta">Posted on June 22, 2025</p>
+      <div class="svg-container">
+      <svg viewBox="0 0 2000 800"  xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><g transform="translate(-1171.076442916673,-622.566591004857) scale(2.2973967099940733)"><path class="link" marker-end="" d="M800,345.5, 980,425.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,345.5, 980,465.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,385.5, 980,425.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,385.5, 980,465.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,425.5, 980,425.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,425.5, 980,465.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,465.5, 980,425.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,465.5, 980,465.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,505.5, 980,425.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,505.5, 980,465.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,545.5, 980,425.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M800,545.5, 980,465.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M980,425.5, 1160,445.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><path class="link" marker-end="" d="M980,465.5, 1160,445.5" style="stroke-width: 0.5; stroke-opacity: 1; stroke: rgb(80, 80, 80); fill: none;"/><circle r="10" class="node" id="0_0" cx="800" cy="345.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><circle r="10" class="node" id="0_1" cx="800" cy="385.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><circle r="10" class="node" id="0_2" cx="800" cy="425.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><circle r="10" class="node" id="0_3" cx="800" cy="465.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><circle r="10" class="node" id="0_4" cx="800" cy="505.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><circle r="10" class="node" id="0_5" cx="800" cy="545.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><circle r="10" class="node" id="1_0" cx="980" cy="425.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><circle r="10" class="node" id="1_1" cx="980" cy="465.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><circle r="10" class="node" id="2_0" cx="1160" cy="445.5" style="fill: rgb(255, 255, 255); stroke: rgb(51, 51, 51);"/><text class="text" dy=".35em" x="765" y="585.5" style="font-size: 12px;">Input Layer ∈ ℝ⁶</text><text class="text" dy=".35em" x="945" y="585.5" style="font-size: 12px;">Hidden Layer ∈ ℝ²</text><text class="text" dy=".35em" x="1125" y="585.5" style="font-size: 12px;">Output Layer ∈ ℝ¹</text></g><defs><marker id="arrow" viewBox="0 -5 10 10" markerWidth="7" markerHeight="7" orient="auto" refX="40"><path d="M0,-5L10,0L0,5" style="stroke: rgb(80, 80, 80); fill: none;"/></marker></defs></svg>
       </div>
-
-      <p>This turns a vector of values into a probability distribution.</p>
-
-      <p>We also often use the numerically stable version:</p>
+      <h2 id="introduction">Introduction</h2>
+        <p>Neural Networks are a fundamental concept in deep learning. The structure above takes in 5 inputs and produces a single output helping us classify data with 5 features.This is a very rudimentary structure of Neural Network but lets get started with this</p>
+      <h2 id="forward-propagation">Foward Propogation</h2>
+      <p> Mathematics behind this structure is very interesting. Let's call our input as X, hidden layer as H, and ouput as Y.</p>
       <div class="math">
-        \[ \text{softmax}(z_i) = \frac{e^{z_i - \max(z)}}{\sum_{j=1}^K e^{z_j - \max(z)}} \]
-      </div>
+        \[X= \begin{bmatrix}
+        x_1 \\
+        x_2 \\
+        x_3 \\
+        x_4 \\
+        x_5 \\
+        \end{bmatrix} \quad
+        H= \begin{bmatrix}
+        h_1 \\ h_2  \end{bmatrix} \quad
 
-      <p>This helps prevent numerical overflow.</p>
+        Y= \begin{bmatrix}
+        y_1 \end{bmatrix} \]
+      </div>
+      <p>We can write the equation as</p>
+      <div class="math">
+        \[Y= W_2^TH = W_1^TX\]
+        </div>
+        <p>Where W_1 is the weight matrix for the input layer, W_2 is the weight matrix for the hidden layer, and X is the input vector.
+          Dimension of W_1 and W_2 are 5x2 and 2x1 respectively.</p>
+  <div class="math">
+    \[ W_1 = \begin{bmatrix}
+    w_{11} & w_{12} \\
+    w_{21} & w_{22} \\
+    w_{31} & w_{32} \\
+    w_{41} & w_{42} \\
+    w_{51} & w_{52} \\
+    \end{bmatrix} \quad
+    W_2 = \begin{bmatrix}
+    w_{11} \\ w_{12} \end{bmatrix} \]
+  </div>
+      <p>Those familiar with matrix multiplication should be able to question y do we need hidden layer. We could have just used a single layer neural network.
+        Yes we can. To get more complex structures, we use an activation function. Therefore, turning our linear equation into a non-linear equation.</p>
+      <h2 id ="activation">Activation Function</h2>
+      Let's take a simple example of tanh activation function.
+      <div class="math">
+        \[tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}\]
+      </div>
+      <p>Applying this to the hidden layer gives us.</p>
+      <div class="math">
+        \[H = tanh(W_1^TX) = \begin{bmatrix}
+        tanh(w_{11}x_1 + w_{12}x_2 + w_{13}x_3 + w_{14}x_4 + w_{15}x_5) \\
+        tanh(w_{21}x_1 + w_{22}x_2 + w_{23}x_3 + w_{24}x_4 + w_{25}x_5) \\
+        \end{bmatrix} \]
+      </div>
+      <p>
+      This is why we use an activation function. To turn our linear equation into a non-linear equation. This is a small job for our readers,
+        try to find the matrix that could have converted our input to the output layers while using only 1 weight matrix bypassing the hidden layer.</p>
+      <h2 id="learning">How do Neural Networks Learn?</h2>
+      <p>Now that we understand the structure of neural networks, let’s explore how they learn.</p>
+      <p>Learning in a neural network is about finding the optimal set of weights that produce the correct output for a given input.
+        To achieve this, the network is trained on a <strong>dataset</strong> that contains inputs along with their corresponding correct outputs.
+        This is known as the <strong>training dataset</strong>.</p>
+
+      <p>By comparing the network’s predictions to the actual outputs in the training data, we adjust the weights in such a way that the error is minimized.
+        In essence, learning is the process of tuning the weights so that the network performs well on the given task.</p>
+      <h2 id="loss">Loss Function</h2>
+
+
+      <h2 id="backpropagation">Backpropagation</h2>
     </article>
+
   </main>
 
   <footer role="contentinfo">
