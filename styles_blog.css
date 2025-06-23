@@ -152,9 +152,7 @@ pre {
     flex-direction: column;
     align-items: flex-start;
   }
-  .svg-container{
-  background-color: #dfe6ec;
-  }
+
 }
 .blog-main {
   display: flex;
