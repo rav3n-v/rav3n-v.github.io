@@ -60,35 +60,27 @@
       <h2 id="forward-propagation">Forward Propagation</h2>
       <p> Mathematics behind this structure is very interesting. Let's call our input as X, hidden layer as H, and output as Y.</p>
       <div class="math">
-        \[X= \begin{bmatrix}
-        x_1 \\
-        x_2 \\
-        x_3 \\
-        x_4 \\
-        x_5
-        \end{bmatrix} \quad
-        H= \begin{bmatrix}
-        h_1 \\ h_2  \end{bmatrix} \quad
-
-        Y= \begin{bmatrix}
-        y_1 \end{bmatrix} \]
+        \[ X = \begin{bmatrix} x_1 & x_2 & x_3 & x_4 & x_5 \end{bmatrix} \]
+        \[H= \begin{bmatrix}
+        h_1 & h_2  \end{bmatrix} \quad
+        Y= \begin{bmatrix} y_1 \end{bmatrix} \]
       </div>
       <p>We can write the equation as</p>
       <div class="math">
-        \[Y= W_2^TH = W_1^TX\]
+        \[Y= HW_2^T = XW_1^T\]
         </div>
         <p>Where \(W_1\) is the weight matrix for the input layer, \(W_2\) is the weight matrix for the hidden layer, and X is the input vector.
           Dimension of \(W_1\) and \(W_2\) are 5x2 and 2x1 respectively.</p>
   <div class="math">
-    \[ W_1 = \begin{bmatrix}
-    w^1_{11} & w^1_{12} \\
-    w^1_{21} & w^1_{22} \\
-    w^1_{31} & w^1_{32} \\
-    w^1_{41} & w^1_{42} \\
-    w^1_{51} & w^1_{52}
+    \[ W^T_1 = \begin{bmatrix}
+    w^1_{11} & w^1_{21} \\
+    w^1_{12} & w^1_{22} \\
+    w^1_{13} & w^1_{23} \\
+    w^1_{14} & w^1_{24} \\
+    w^1_{15} & w^1_{25}
     \end{bmatrix} \quad
-    W_2 = \begin{bmatrix}
-    w^2_{11} \\ w^2_{12} \end{bmatrix} \]
+    W_2^T = \begin{bmatrix}
+    w^2_{11}& w^2_{21} \end{bmatrix} \]
   </div>
       <p>If you're familiar with matrix multiplication, you might wonder why we need a hidden layer at all?. We could have just used a single layer neural network.
         Yes we can. To get more complex structures, we use an activation function. Therefore, turning our linear equation into a non-linear equation.</p>
@@ -99,7 +91,7 @@
       </div>
       <p>Applying this to the hidden layer gives us.</p>
       <div class="math">
-        \[H = tanh(W_1^TX) = \begin{bmatrix}
+        \[H = tanh(XW_1^T) = \begin{bmatrix}
         tanh(w^1_{11}x_1 + w^1_{12}x_2 + w^1_{13}x_3 + w^1_{14}x_4 + w^1_{15}x_5) \\
         tanh(w^1_{21}x_1 + w^1_{22}x_2 + w^1_{23}x_3 + w^1_{24}x_4 + w^1_{25}x_5) \\
         \end{bmatrix} \]
