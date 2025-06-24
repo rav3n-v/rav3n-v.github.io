@@ -61,6 +61,32 @@ const blogFiles = [
     window.onload = () => {
   loadSection('about');
   setActiveLink('about');
+  document.addEventListener('click', function (event) {
+  const sidebar = document.getElementById('sidebar');
+  const toggleBtn = document.getElementById('toggle-aside');
+
+  const isClickInsideSidebar = sidebar.contains(event.target);
+  const isClickToggleButton = toggleBtn.contains(event.target);
+
+  if (!isClickInsideSidebar && !isClickToggleButton && window.innerWidth <= 768) {
+    sidebar.classList.remove('open');
+  }
+});
+  const toggleBtn = document.getElementById('toggle-aside');
+  const sidebar = document.getElementById('sidebar');
+
+  toggleBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      document.getElementById('sidebar').classList.remove('open');
+    }
+  });
+});
+
 };
     function setActiveLink(active) {
   document.querySelectorAll('.nav-links a').forEach(link => {
@@ -70,3 +96,4 @@ const blogFiles = [
     }
   });
 }
+
