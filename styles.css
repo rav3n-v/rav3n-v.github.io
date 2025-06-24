@@ -183,6 +183,43 @@ ul {
 .nav-links a {
     transition: all 0.3s ease;
 }
+
+.timeline {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+  border-left: 3px solid var(--accent);
+}
+
+.timeline li {
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  position: relative;
+}
+
+.timeline li::before {
+  content: "●";
+  position: absolute;
+  left: -0.8rem;
+  color: var(--accent);
+  font-size: 1rem;
+  top: 0.6rem;
+}
+
+.quote {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #dcdcdc;
+}
+
+.quote-author {
+  text-align: left;
+  font-size: 1rem;
+  color: #aaaaaa;
+  margin-top: 0.5rem;
+    padding-left: 1rem;
+}
+
 #construction-warning{
     color: red;
     font-size: 2rem;

@@ -51,17 +51,12 @@ const blogFiles = [
       }
 
       else if (section === 'about') {
-        main.innerHTML = `
-          <h2>Welcome to My Site</h2>
-    <h2>About Me</h2>
-<p>Hey! I’m Vinayak D, currently pursuing my MSc in Mathematics at Cochin University of Science and Technology.
-I love math, coding, and sharing what I learn along the way.
- This site is where I explore ideas, post projects, and maybe figure out what I’m meant to do.</p>
-
-      <p>Feel free to reach out at <a id="email" href="mailto:vinayak02003@gmail.com">vinayak02003@gmail.com</a> or connect with me on my socials. :)</p>
-        <h2 id="construction-warning">This site is still under-construction and most links might not work yet.<h2>
-`;
-      }
+  fetch('about.html')
+    .then(res => res.text())
+    .then(html => {
+      main.innerHTML = html;
+    });
+}
     }
     window.onload = () => {
   loadSection('about');
