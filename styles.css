@@ -250,6 +250,13 @@ ul {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+    .site-title {
+        display: block;
+        text-align: center;
+        font-size: 1.2rem;
+        margin: 0;
+        color: var(--accent);
+    }
     .mobile-header {
         display: block;
     }
@@ -289,14 +296,9 @@ ul {
     .content {
         padding-top: 4rem; /* Give space for the toggle button */
     }
-    .site-title {
-        display: block;
-        text-align: center;
-        font-size: 1.2rem;
-        margin: 0;
-        color: var(--accent);
+
 }
-}
+
 
 
 
