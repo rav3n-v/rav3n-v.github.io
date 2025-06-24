@@ -37,13 +37,15 @@
     <aside class="toc" role="complementary" aria-label="Navigation">
     <h3>On this page</h3>
     <ul>
-      <li><a href="#post-title">Neural Network</a></li>
-      <li><a href="#introduction">Introduction</a></li>
-      <li><a href="#forward-propagation">Forward Propagation</a></li>
-      <li><a href="#learning">How Neural Networks Learn?</a></li>
-      <li><a href="#loss">Loss Function</a></li>
-      <li><a href="#activation">Activation Function</a></li>
-      <li><a href="#backpropagation">Back Propagation</a></li>
+        <li><a href="#post-title">Neural Network</a></li>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#forward-propagation">Forward Propagation</a></li>
+        <li><a href="#learning">How do Neural Networks Learn?</a></li>
+        <li><a href="#loss">Loss Function</a></li>
+        <li><a href="#activation">Activation Function</a></li>
+        <li><a href="#backpropagation">Back Propagation</a></li>
+        <li><a href="#gradient">Gradient Descent</a></li>
+        <li><a href="#references">References</a></li>
     </ul>
   </aside>
     <article role="article" aria-labelledby="post-title" class="content">
@@ -123,7 +125,7 @@ of Neural Network. There are a wide variety of loss functions. We will see use M
       <div class="math">
         \[dW_i = \frac{\partial L}{\partial W_i} = \frac{1}{n}\sum_{i=1}^{n}(y_i - \hat{y_i})\frac{\partial}{\partial W_i}y_i\]
       </div>
-      <h2>Gradient Descent</h2>
+      <h2 id="gradient">Gradient Descent</h2>
       <p>Gradient descent is a simple algorithm for optimizing a loss function.
         It is a simple iterative process that starts with an initial set of weights and iteratively updates the weights based on the gradient of the loss function.</p>
       <div class="math">
@@ -151,7 +153,7 @@ of Neural Network. There are a wide variety of loss functions. We will see use M
 
 
 
-      <h2>References</h2>
+      <h2 id="references">References</h2>
       <ol>
   <li id="ref1">
     Charu C. Aggarwal, <em>Linear Algebra and Optimization for Machine Learning</em>. Springer Cham, 2020.
