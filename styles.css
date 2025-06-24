@@ -244,6 +244,9 @@ ul {
   gap: 1rem;
   border-bottom: 1px solid #333;
 }
+.site-title {
+    display: none;
+}
 
 /* Responsive styles */
 @media (max-width: 768px) {
