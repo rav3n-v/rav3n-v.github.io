@@ -7,6 +7,9 @@
     --links-accent-color: #4db8ff;
     --links-hover-color-light: #61e5f6;
     --accent-color-dark: #00bcd4;
+
+}
+*{
     box-sizing: border-box;
 }
 body{
