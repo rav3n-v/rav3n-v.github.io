@@ -133,17 +133,17 @@ a{
     color: var(--accent-light);
 
 }
-
-
 #blog-description{
     color: var(--muted);
     font-size: 1rem;
-    margin: 0.5rem;
+    margin-top: 1rem;
+
 }
 #blog-date{
     color: var(--muted);
     font-size: 0.8rem;
-    margin: 0.5rem;
+    margin-top: 0.5rem;
+
 }
 ul {
     list-style: none;

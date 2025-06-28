@@ -7,6 +7,7 @@
     --links-accent-color: #4db8ff;
     --links-hover-color-light: #61e5f6;
     --accent-color-dark: #00bcd4;
+    box-sizing: border-box;
 }
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -51,6 +52,12 @@ h2{
     padding-bottom: 0.3rem;
     border-bottom: 2px solid var(--links-accent-color);
     font-size: 1.75rem;
+}
+.meta {
+    color: #999;
+    font-size: 0.9rem;
+    margin:0;
+    margin-bottom: 1.5rem;
 }
 
 header{
