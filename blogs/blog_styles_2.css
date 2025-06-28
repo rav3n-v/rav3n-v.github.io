@@ -111,9 +111,13 @@ h3.in-page-nav-heading{
 
 }
 .image-row{
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     justify-content: space-between;
+
+
 }
 .image-row img {
     border-radius: 8px;
