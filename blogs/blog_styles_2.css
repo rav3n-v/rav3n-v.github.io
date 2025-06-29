@@ -80,7 +80,6 @@ header{
 }
 .svg-container{
     width: 100%;
-
     align-items: center;
   background-color: #dfe6ec;
   padding: 0.75rem;
@@ -92,7 +91,6 @@ header{
 svg{
     display: block;
     width:100%;
-
     margin: 0 auto;
 }
 main{
