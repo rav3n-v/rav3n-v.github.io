@@ -1,5 +1,6 @@
 const blogFiles = [
       "blogs/blog_1.html",
+    "blogs/blog_2.html",
 
     ];
 

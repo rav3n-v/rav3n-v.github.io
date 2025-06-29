@@ -79,6 +79,9 @@ header{
     line-height: 3rem;
 }
 .svg-container{
+    width: 100%;
+
+    align-items: center;
   background-color: #dfe6ec;
   padding: 0.75rem;
   margin: 1rem 0;
@@ -89,7 +92,8 @@ header{
 svg{
     display: block;
     width:100%;
-    height: auto;
+
+    margin: 0 auto;
 }
 main{
     max-width:800px;

@@ -39,12 +39,53 @@
     <h3 class="in-page-nav-heading">On this page</h3>
     <ul>
         <li><a href="#post-title">Optimisation Techniques</a></li>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#gradient-descent">Gradient Descent</a></li>
+      <li><a href="#Momentum">Momentum-Based Optimizer</a></li>
+      <li><a href="#references">References</a></li>
+
 
     </ul>
   </aside>
     <article role="article" aria-labelledby="post-title" class="content">
       <h2 id="post-title">Optimisation Techniques</h2>
       <p class="meta">Posted on June 28, 2025</p>
+      <div class="svg-container" style="background-color: #1e1e1e"><img src="Images/Blog_2_Images/pringle.svg"></div>
+
+      <h2 id="introduction">Introduction</h2>
+      <p>Optimization refers to the process of finding the best solution within given constraints.
+        In the context of neural networks, it means finding the optimal set of weights that minimizes the loss function.
+        Our goal is not just to find weights that perform well on the training data,
+        but also those that generalize well to unseen data.
+      </p>
+      <h2 id="gradient-descent">Gradient Descent</h2>
+      <p>Gradient Descent is a fundamental optimization algorithm that uses the concept of a slope to minimize
+        the loss function.
+        The derivative of a function indicates the direction of the steepest ascent,
+        so we move in the opposite direction to reduce the loss.</p>
+      <p>We compute the partial derivatives with respect to the weights,
+        which tells us how to update each weight to decrease the loss.</p>
+      <p>There are many types of loss functions—like Mean Squared Error (MSE) and Cross-Entropy Loss—but in general,
+         loss function assigns low values(or preferablly zero) when predictions match targets and high positive values when they differ.</p>
+        <p>The gradient descent update rule is:
+      </p>
+      <div class="math">
+        \[W_{i+1} = W_i - \alpha \frac{\partial L}{\partial W_i}\]
+      </div>
+      <p>
+        where \(\alpha\) is the learning rate. One limitation of standard gradient descent is that it uses a constant step size,
+        which may be inefficient in regions where the landscape of the loss function changes rapidly.
+      </p>
+      <h2 id="Momentum">Momentum-Based Optimizer</h2>
+      <p>To address the issue of slow convergence in standard gradient descent, momentum-based optimizers incorporate
+      the idea of momentum from physics.
+      These optimizers consider not only the current gradient but also the accumulated past gradients,
+      allowing the optimizer to "build speed" in directions with consistent descent.</p>
+      <div class="math">
+        \[v_t = \beta v_{t-1} + \alpha \frac{\partial L}{\partial W_t}\]
+        \[W_t = W_{t-1} - v_t\]
+      </div>
+
 
       <h2 id="references">References</h2>
       <ol>
