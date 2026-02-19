@@ -2,7 +2,6 @@ const blogFiles = [
       "blogs/blog_1.html",
     "blogs/blog_2.html",
     "blogs/blog_3.html",
-
     ];
 const projectFiles = [
       "projects/project_1.html",
