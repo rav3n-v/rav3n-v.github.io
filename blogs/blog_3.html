@@ -2,17 +2,22 @@
 <html lang="en">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B32571Q9D0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B32571Q9D0');
+</script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Why Gradient Descent Works - A derivation using Taylor Series expansion.">
+  <meta name="date" content="June 29, 2025">
+  <title>Deep Learning - Why Gradient Descent Works</title>
 
-  <meta name="description" content="Using Taylor Series Expansion to derive the intuition behind Gradient Descent.">
-  <meta name="date" content="February 2026">
-
-  <title>Taylor Series and Gradient Descent Intuition</title>
-
-  <!-- IMPORTANT: since this file is inside /blogs -->
-  <link rel="stylesheet" href="blog_styles_2.css" />
-
+  <link rel="stylesheet" href="../blog_styles_2.css" />
   <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
@@ -21,28 +26,47 @@
 
 <header role="banner">
   <div class="header-container">
-    <h1>Optimization Theory</h1>
+    <h1>Deep Learning</h1>
     <nav role="navigation">
-      <a href="../index.html" class="nav-link">Home</a>
+      <a href="../index.html" class="nav-link" aria-label="Back to Home">Home</a>
     </nav>
   </div>
-  <p class="subtitle">Mathematical Foundations of Machine Learning</p>
+  <p class="subtitle">Mathematics behind AI</p>
 </header>
 
 <main role="main">
 
-  <article class="content">
+  <aside class="in-page-navigation" role="navigation">
+    <h3 class="in-page-nav-heading">On this page</h3>
+    <ul>
+      <li><a href="#post-title">Why Gradient Descent Works</a></li>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#taylor">Taylor Series Expansion</a></li>
+      <li><a href="#minimization">From Approximation to Minimization</a></li>
+      <li><a href="#update">Gradient Descent Update Rule</a></li>
+      <li><a href="#multivariable">Extension to Multiple Dimensions</a></li>
+      <li><a href="#references">References</a></li>
+    </ul>
+  </aside>
 
-    <h2>Taylor Series Expansion and Gradient Descent</h2>
-    <p class="meta">Posted on February 2026</p>
+  <article role="article" aria-labelledby="post-title" class="content">
 
-    <h3>Introduction</h3>
+    <h2 id="post-title">Why Gradient Descent Works</h2>
+    <p class="meta">Posted on June 29, 2025</p>
 
-    <p><strong>Taylor Series Expansion</strong></p>
+    <h2 id="introduction">Introduction</h2>
 
     <p>
-      Any continuously differentiable function can be written as a sum involving its derivatives.
-      Around a point \( x \), we have:
+      Gradient Descent is one of the most fundamental optimization algorithms used in machine learning.
+      But why does moving in the direction of the negative derivative reduce the function value?
+      The answer comes directly from the Taylor series expansion.
+    </p>
+
+    <h2 id="taylor">Taylor Series Expansion</h2>
+
+    <p>
+      Suppose \( f(x) \) is a continuously differentiable function.
+      Around a point \( x \), the Taylor expansion gives:
     </p>
 
     <div class="math">
@@ -61,12 +85,8 @@
     </div>
 
     <p>
-      where \( h \) is a very small quantity, close to zero.
-    </p>
-
-    <p>
-      Since \( h \) is small, higher order terms become negligible.
-      Keeping only the first-order term, we obtain the linear approximation:
+      If \( h \) is very small, higher-order terms become negligible.
+      Keeping only the first-order term:
     </p>
 
     <div class="math">
@@ -75,11 +95,15 @@
       \]
     </div>
 
-    <h3>Connecting to Minimization</h3>
+    <p>
+      This is called the first-order approximation of the function.
+    </p>
+
+    <h2 id="minimization">From Approximation to Minimization</h2>
 
     <p>
-      Suppose we want to minimize a function.
-      That means we want:
+      Suppose we want to decrease the function value.
+      That means:
     </p>
 
     <div class="math">
@@ -99,7 +123,7 @@
     </div>
 
     <p>
-      Therefore, to decrease the function:
+      Therefore, to ensure decrease:
     </p>
 
     <div class="math">
@@ -109,32 +133,92 @@
     </div>
 
     <p>
-      We do not control the sign of \( f'(x) \),
-      but we do control the direction of movement \( h \).
-    </p>
-
-    <p>
-      To ensure decrease, we choose:
+      We cannot control the sign of \( f'(x) \),
+      but we can control the direction of movement \( h \).
+      To guarantee that the product is negative, we choose:
     </p>
 
     <div class="math">
       \[
-      h = - f'(x)
+      h = - \alpha f'(x)
       \]
     </div>
 
     <p>
-      That is, we move in the direction opposite to the slope of the function.
-      This is precisely the idea behind <strong>gradient descent</strong>.
+      where \( \alpha > 0 \) is a small constant called the learning rate.
+      This ensures that we move in the direction opposite to the slope,
+      which locally decreases the function value.
     </p>
+
+    <h2 id="update">Gradient Descent Update Rule</h2>
+
+    <p>
+      Writing this iteratively:
+    </p>
+
+    <div class="math">
+      \[
+      x_{k+1}
+      =
+      x_k
+      -
+      \alpha f'(x_k)
+      \]
+    </div>
+
+    <p>
+      This is precisely the Gradient Descent update rule.
+      The algorithm repeatedly moves in the direction of steepest descent,
+      gradually approaching a local minimum.
+    </p>
+
+    <h2 id="multivariable">Extension to Multiple Dimensions</h2>
+
+    <p>
+      For functions of multiple variables \( f : \mathbb{R}^n \to \mathbb{R} \),
+      the derivative generalizes to the gradient:
+    </p>
+
+    <div class="math">
+      \[
+      \mathbf{x}_{k+1}
+      =
+      \mathbf{x}_k
+      -
+      \alpha \nabla f(\mathbf{x}_k)
+      \]
+    </div>
+
+    <p>
+      The gradient points in the direction of steepest increase.
+      Therefore, its negative points in the direction of steepest decrease.
+      This is why gradient descent works.
+    </p>
+
+    <h2 id="references">References</h2>
+
+    <ol>
+      <li>
+        Charu C. Aggarwal,
+        <em>Linear Algebra and Optimization for Machine Learning</em>.
+        Springer Cham, 2020.
+      </li>
+      <li>
+        Goodfellow, I., Bengio, Y., & Courville, A. (2016).
+        <em>Deep Learning</em>. MIT Press.
+      </li>
+    </ol>
 
   </article>
 
 </main>
 
-<footer>
+<footer role="contentinfo">
   <p>
-    © 2026 Vinayak Devesan.
+    © 2025 Vinayak Devesan. Content licensed under
+    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">
+      CC BY 4.0
+    </a>.
   </p>
 </footer>
 
