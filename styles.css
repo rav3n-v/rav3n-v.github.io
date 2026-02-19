@@ -14,7 +14,7 @@
     }
 
     body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             display: flex;
@@ -71,6 +71,7 @@
     }
 
     .post {
+        margin-bottom: 0.5rem;
       background-color: var(--card);
       padding: 1.5rem;
       border-radius: 12px;

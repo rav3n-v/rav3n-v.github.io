@@ -1,8 +1,13 @@
 const blogFiles = [
       "blogs/blog_1.html",
     "blogs/blog_2.html",
+    ,"blogs/blog_3.html",
 
     ];
+const projectFiles = [
+      "projects/project_1.html",
+    "projects/project_2.html",
+]
 
     function loadSection(section) {
       const main = document.querySelector('main');
@@ -38,18 +43,37 @@ const blogFiles = [
       }
 
       else if (section === 'projects') {
-        main.innerHTML = `
-          <h2 class="section-title">Projects</h2>
-          <article class="post">
-            <h3>Neural Net from Scratch</h3>
-            <p>Implementing a feedforward neural network using NumPy and backpropagation.</p>
-          </article>
-          <article class="post">
-            <h3>Django Blog Generator</h3>
-            <p>Building a blog engine that auto-generates content from LaTeX files.</p>
-          </article>
+  main.innerHTML = `<h2>Projects</h2><div id="project-list">Loading...</div>`;
+  const projectList = document.getElementById('project-list');
+  projectList.innerHTML = '';
+
+  projectFiles.forEach(file => {
+    fetch(file)
+      .then(res => res.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+
+        const title = doc.querySelector('title')?.textContent || "Untitled";
+        const desc = doc.querySelector('meta[name=description]')?.content || "No description.";
+        const date = doc.querySelector('meta[name=date]')?.content || "Unknown date";
+
+        const article = document.createElement('article');
+        article.classList.add('post');
+        article.innerHTML = `
+          <a href="${file}">
+            <h3>${title}</h3>
+            <p>${desc}</p>
+            <p><small><em>${date}</em></small></p>
+          </a>
         `;
-      }
+        projectList.appendChild(article);
+      })
+      .catch(err => {
+        projectList.innerHTML += `<p>Error loading ${file}: ${err.message}</p>`;
+      });
+  });
+}
 
       else if (section === 'about') {
   fetch('about.html')
