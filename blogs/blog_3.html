@@ -14,7 +14,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Why Gradient Descent Works - A derivation using Taylor Series expansion.">
-  <meta name="date" content="June 29, 2025">
+  <meta name="date" content="February 19, 2026">
   <title>Deep Learning - Why Gradient Descent Works</title>
 
   <link rel="stylesheet" href="blog_styles_2.css" />
@@ -142,11 +142,12 @@
 
     <div class="math">
       \[
-      h = - \alpha f'(x)
+      h = - \alpha f'(x) \implies h*f'(x)= -(f'*(x))^2<0
       \]
     </div>
 
     <p>
+      since square function of real valued inputs always give a positive value, -(f'(x))^2 it is always negative.
       where \( \alpha > 0 \) is a small constant called the learning rate.
       This ensures that we move in the direction opposite to the slope,
       which locally decreases the function value.
