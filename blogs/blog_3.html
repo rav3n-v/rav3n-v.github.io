@@ -147,8 +147,8 @@
     </div>
 
     <p>
-      since square function of real valued inputs always give a positive value, -(f'(x))^2 it is always negative.
-      where \( \alpha > 0 \) is a small constant called the learning rate.
+      Since the square of real valued inputs always give a positive value, -(f'(x))^2 it is always negative.
+      Where \( \alpha > 0 \) is a small constant called the learning rate.
       This ensures that we move in the direction opposite to the slope,
       which locally decreases the function value.
     </p>
@@ -197,7 +197,13 @@
       Therefore, its negative points in the direction of steepest decrease.
       This is why gradient descent works.
     </p>
+    <h2 id="intuitive">Intuitive Understanding</h2>
+    The slope gives us information about the rate of change of the function with respect to the variable.
 
+If the slope at a point is positive, then the function is increasing in that direction. Therefore, to decrease the function value, we should move in the opposite direction. That is why we move in the direction of -f'(x)
+Now suppose the slope at a point is negative. Then the function is decreasing in that direction. Since we want to continue decreasing the function value, we should keep moving in that same direction. However, because the slope itself is negative, multiplying it by
+−1 makes the step direction positive, which ensures that we continue moving forward in the direction that reduces the function value.
+Thus, moving in the direction of the negative slope always guides us toward a minimum.
     <h2 id="references">References</h2>
 
     <ol>
