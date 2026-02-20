@@ -139,6 +139,26 @@ h3.in-page-nav-heading{
     width: 30%;
 }
 
+
+
+.svg-container-small {
+  background-color: #1e1e1e;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  border-left: 4px solid #4db8ff;
+
+  max-height: 320px;      /* control height */
+  overflow: hidden;
+}
+
+.svg-container-small img {
+  width: 100%;
+  max-height: 300px;      /* hard height cap */
+  height: auto;           /* preserve ratio */
+  display: block;
+}
+
+
 @media (min-width: 800px){
     main {
         display: flex;
