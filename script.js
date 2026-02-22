@@ -1,50 +1,74 @@
-const blogFiles = [
-      "blogs/blog_1.html",
-    "blogs/blog_2.html",
-    "blogs/blog_3.html",
-    ];
 const projectFiles = [
-      "projects/project_1.html",
-    "projects/project_2.html",
-]
+  "projects/project_1.html",
+  "projects/project_2.html",
+];
 
-    function loadSection(section) {
-      const main = document.querySelector('main');
+/* ===========================
+   BLOG LOADER (JSON BASED)
+=========================== */
 
-      if (section === 'blogs') {
-        main.innerHTML = `<h2>Blogs</h2><div id="blog-list">Loading...</div>`;
-        const blogList = document.getElementById('blog-list');
-        blogList.innerHTML = '';
+async function loadBlogs() {
+  const main = document.querySelector("main");
+  main.innerHTML = "<h2>Blogs</h2><div id='blog-container'></div>";
 
-        blogFiles.forEach(file => {
-          fetch(file)
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, 'text/html');
+  const container = document.getElementById("blog-container");
 
-              const title = doc.querySelector('title')?.textContent || "Untitled";
-              const desc = doc.querySelector('meta[name=description]')?.content || "No description.";
-              const date = doc.querySelector('meta[name=date]')?.content || "Unknown date";
+  try {
+    const response = await fetch("blogs/blog_index.json");
+    const blogs = await response.json();
 
-              const article = document.createElement('article');
-              article.classList.add('post');
-              article.innerHTML = `
-                <a href="${file}">
-                  <h3 id="blog-title">${title}</h3>
-                  <p id="blog-description">${desc}</p>
-                  <p id="blog-date">Posted on ${date}</p>
-                </a>
-              `;
-              blogList.appendChild(article);
-            });
-        });
+    // Group blogs by category
+    const grouped = {};
+
+    blogs.forEach(blog => {
+      if (!grouped[blog.category]) {
+        grouped[blog.category] = [];
       }
+      grouped[blog.category].push(blog);
+    });
 
-      else if (section === 'projects') {
-  main.innerHTML = `<h2>Projects</h2><div id="project-list">Loading...</div>`;
-  const projectList = document.getElementById('project-list');
-  projectList.innerHTML = '';
+    // Render grouped blogs
+    for (const category in grouped) {
+
+      const sectionTitle = document.createElement("h3");
+      sectionTitle.className = "section-title";
+      sectionTitle.textContent = category;
+      container.appendChild(sectionTitle);
+
+      grouped[category].forEach(blog => {
+        const card = document.createElement("div");
+        card.className = "blog-card";
+
+        card.innerHTML = `
+          <h4>${blog.title}</h4>
+          <p>${blog.description}</p>
+          <small>Posted on ${blog.date}</small>
+        `;
+
+        card.onclick = () => {
+          window.location.href = blog.file;
+        };
+
+        container.appendChild(card);
+      });
+    }
+
+  } catch (error) {
+    container.innerHTML = "<p>Failed to load blogs.</p>";
+    console.error(error);
+  }
+}
+
+
+/* ===========================
+   PROJECT LOADER
+=========================== */
+
+function loadProjects() {
+  const main = document.querySelector("main");
+  main.innerHTML = `<h2>Projects</h2><div id="project-list"></div>`;
+
+  const projectList = document.getElementById("project-list");
 
   projectFiles.forEach(file => {
     fetch(file)
@@ -59,6 +83,7 @@ const projectFiles = [
 
         const article = document.createElement('article');
         article.classList.add('post');
+
         article.innerHTML = `
           <a href="${file}">
             <h3>${title}</h3>
@@ -66,6 +91,7 @@ const projectFiles = [
             <p><small><em>${date}</em></small></p>
           </a>
         `;
+
         projectList.appendChild(article);
       })
       .catch(err => {
@@ -74,28 +100,52 @@ const projectFiles = [
   });
 }
 
-      else if (section === 'about') {
+
+/* ===========================
+   ABOUT LOADER
+=========================== */
+
+function loadAbout() {
+  const main = document.querySelector("main");
+
   fetch('about.html')
     .then(res => res.text())
     .then(html => {
       main.innerHTML = html;
     });
 }
-    }
-    window.onload = () => {
-  loadSection('about');
-  setActiveLink('about');
-  document.addEventListener('click', function (event) {
-  const sidebar = document.getElementById('sidebar');
-  const toggleBtn = document.getElementById('toggle-aside');
 
-  const isClickInsideSidebar = sidebar.contains(event.target);
-  const isClickToggleButton = toggleBtn.contains(event.target);
 
-  if (!isClickInsideSidebar && !isClickToggleButton && window.innerWidth <= 768) {
-    sidebar.classList.remove('open');
+/* ===========================
+   SECTION CONTROLLER
+=========================== */
+
+function loadSection(section) {
+
+  if (section === 'blogs') {
+    loadBlogs();
   }
-});
+
+  else if (section === 'projects') {
+    loadProjects();
+  }
+
+  else if (section === 'about') {
+    loadAbout();
+  }
+
+  setActiveLink(section);
+}
+
+
+/* ===========================
+   SIDEBAR + UI LOGIC
+=========================== */
+
+window.onload = () => {
+
+  loadSection('about');
+
   const toggleBtn = document.getElementById('toggle-aside');
   const sidebar = document.getElementById('sidebar');
 
@@ -103,21 +153,35 @@ const projectFiles = [
     sidebar.classList.toggle('open');
   });
 
-  document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth <= 768) {
-      document.getElementById('sidebar').classList.remove('open');
+  document.addEventListener('click', function (event) {
+    const isClickInsideSidebar = sidebar.contains(event.target);
+    const isClickToggleButton = toggleBtn.contains(event.target);
+
+    if (!isClickInsideSidebar && !isClickToggleButton && window.innerWidth <= 768) {
+      sidebar.classList.remove('open');
     }
   });
-});
 
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        sidebar.classList.remove('open');
+      }
+    });
+  });
 };
-    function setActiveLink(active) {
+
+
+/* ===========================
+   ACTIVE LINK HIGHLIGHT
+=========================== */
+
+function setActiveLink(active) {
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.classList.remove('active');
+
     if (link.textContent.toLowerCase() === active) {
       link.classList.add('active');
     }
   });
 }
-
