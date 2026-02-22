@@ -36,18 +36,16 @@ async function loadBlogs() {
       container.appendChild(sectionTitle);
 
       grouped[category].forEach(blog => {
-        const card = document.createElement("div");
-        card.className = "blog-card";
+        const card = document.createElement("article");
+        card.className = "post";
 
         card.innerHTML = `
-          <h4>${blog.title}</h4>
-          <p>${blog.description}</p>
-          <small>Posted on ${blog.date}</small>
+          <a href="${blog.file}">
+            <h3>${blog.title}</h3>
+            <p>${blog.description}</p>
+            <p><small><em>Posted on ${blog.date}</em></small></p>
+          </a>
         `;
-
-        card.onclick = () => {
-          window.location.href = blog.file;
-        };
 
         container.appendChild(card);
       });
@@ -165,7 +163,7 @@ window.onload = () => {
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
       if (window.innerWidth <= 768) {
-        sidebar.classList.remove('open');
+        document.getElementById('sidebar').classList.remove('open');
       }
     });
   });

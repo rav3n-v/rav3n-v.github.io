@@ -303,7 +303,16 @@ ul {
 }
 
 
+/* ===========================
+   BLOG CATEGORY TITLE
+=========================== */
 
+.section-title {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: 1.4rem;
+}
 
 
 
