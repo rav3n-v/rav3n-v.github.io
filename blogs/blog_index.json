@@ -14,17 +14,17 @@
     "date": "June 22, 2025"
   },
   {
+    "title": "Linear Algebra - Lecture 1",
+    "file": "blogs/Linear_Algebra/blog_1.html",
+    "category": "Linear Algebra",
+    "description": "Linear Algebra Lecture 1 \u2014 Vectors, Scalar Multiplication, and Introduction to Vector Spaces.",
+    "date": "February 22, 2026"
+  },
+  {
     "title": "Deep Learning - Why Gradient Descent Works",
     "file": "blogs/Deep_Learning/blog_3.html",
     "category": "Deep Learning",
     "description": "Why Gradient Descent Works - A derivation using Taylor Series expansion.",
     "date": "February 19, 2026"
-  },
-  {
-    "title": "Title",
-    "file": "blogs/Linear_Algebra/blog_1.html",
-    "category": "Linear Algebra",
-    "description": "",
-    "date": ""
   }
 ]

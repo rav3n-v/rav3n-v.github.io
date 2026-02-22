@@ -1,10 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B32571Q9D0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B32571Q9D0');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Linear Algebra Lecture 1 — Vectors, Scalar Multiplication, and Introduction to Vector Spaces.">
+  <meta name="date" content="February 22, 2026">
+  <title>Linear Algebra - Lecture 1</title>
+
+  <link rel="stylesheet" href="../blog_styles_2.css" />
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-<body>
+
+<body class="dark-theme">
+
+<header role="banner">
+  <div class="header-container">
+    <h1>Linear Algebra</h1>
+    <nav role="navigation">
+      <a href="../../index.html" class="nav-link" aria-label="Back to Home">Home</a>
+    </nav>
+  </div>
+  <p class="subtitle">Building Intuition Before Abstraction</p>
+</header>
+
+<main role="main">
+
+  <aside class="in-page-navigation" role="navigation">
+    <h3 class="in-page-nav-heading">On this page</h3>
+    <ul>
+      <li><a href="#post-title">Lecture 1</a></li>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#vectors">Vectors vs Scalars</a></li>
+      <li><a href="#addition">Vector Addition</a></li>
+      <li><a href="#algebraic">Algebraic Definition</a></li>
+      <li><a href="#rn">Vectors in Rⁿ</a></li>
+      <li><a href="#scalar">Scalar Multiplication</a></li>
+      <li><a href="#properties">Fundamental Properties</a></li>
+      <li><a href="#vector-space">Transition to Vector Spaces</a></li>
+    </ul>
+  </aside>
+
+  <article role="article" aria-labelledby="post-title" class="content">
+
+    <h2 id="post-title">Lecture 1 — Vectors and the Birth of Vector Spaces</h2>
+    <p class="meta">Posted on February 22, 2026</p>
+
+    <div class="svg-container" style="background-color: #1e1e1e">
+      <img viewBox="0 0 2000 800" src="Images/Blog_1_Images/Linear_Opening.svg">
+    </div>
+
+    <h2 id="introduction">Introduction</h2>
+
+    <p>
+      In this lecture series, we begin our study of Linear Algebra by building intuition first.
+      The structure loosely follows Friedberg, Insel, and Spence,
+      <em>Linear Algebra</em>.
+    </p>
+
+    <p>
+      Our goal is to understand how algebraic structure emerges naturally from geometric ideas.
+    </p>
+
+    <h2 id="vectors">Vectors vs Scalars</h2>
+
+    <p>
+      From physics, we know that vectors have both magnitude and direction.
+      Examples include force, displacement, and velocity.
+    </p>
+
+    <p>
+      Scalars, on the other hand, have only magnitude.
+      Examples include mass and temperature.
+    </p>
+
+    <p>
+      In one dimension, vectors and scalars behave similarly.
+      In higher dimensions, direction becomes essential.
+    </p>
+
+    <h2 id="addition">Geometric Vector Addition</h2>
+
+    <p>
+      If two vectors \( x \) and \( y \) act at the same point,
+      their sum is given by the diagonal of the parallelogram formed by them.
+    </p>
+
+    <p>
+      This is known as the parallelogram law of vector addition.
+    </p>
+
+    <h2 id="algebraic">Algebraic Definition of Addition</h2>
+
+    <p>
+      Suppose
+    </p>
+
+    <div class="math">
+      \[
+      x = (a_1, a_2), \quad y = (b_1, b_2)
+      \]
+    </div>
+
+    <p>
+      Then their sum is defined component-wise:
+    </p>
+
+    <div class="math">
+      \[
+      x + y = (a_1 + b_1,\; a_2 + b_2)
+      \]
+    </div>
+
+    <p>
+      The geometric and algebraic definitions are equivalent.
+    </p>
+
+    <h2 id="rn">Vectors in \( \mathbb{R}^n \)</h2>
+
+    <p>
+      Any vector in \( \mathbb{R}^2 \) can be written as:
+    </p>
+
+    <div class="math">
+      \[
+      (a_1, a_2), \quad a_1, a_2 \in \mathbb{R}
+      \]
+    </div>
+
+    <p>
+      More generally, in \( \mathbb{R}^n \):
+    </p>
+
+    <div class="math">
+      \[
+      (a_1, a_2, \dots, a_n), \quad a_i \in \mathbb{R}
+      \]
+    </div>
+
+    <p>
+      Even though we cannot visualize high dimensions,
+      the algebraic structure continues to hold.
+    </p>
+
+    <h2 id="scalar">Scalar Multiplication</h2>
+
+    <p>
+      If \( t \in \mathbb{R} \) and \( x = (a_1, a_2) \), then:
+    </p>
+
+    <div class="math">
+      \[
+      tx = (t a_1, t a_2)
+      \]
+    </div>
+
+    <p>
+      Geometrically:
+    </p>
+
+    <ul>
+      <li>If \( |t| > 1 \), the vector stretches.</li>
+      <li>If \( 0 < |t| < 1 \), the vector shrinks.</li>
+      <li>If \( t < 0 \), the direction reverses.</li>
+    </ul>
+
+
+    <h2 id="properties">Fundamental Properties</h2>
+
+    <p>
+      The following properties hold in \( \mathbb{R}^2 \) and more generally in \( \mathbb{R}^n \):
+    </p>
+<div class="math">
+\[
+\begin{align*}
+x + y &= y + x  &&\text{(Commutativity)} \\
+(x + y) + z &= x + (y + z) &&\text{(Associativity)} \\
+x + 0 &= x  &&\text{(Additive Identity)}\\
+x + (-x) &= 0  &&\text{(Additive Commutativity)}\\
+tx + (y + z) &= (tx + y) + z  &&\text{(Distributivity over Addition)}\\
+tx + (ty) &= (tx + ty) &&\text{(Distributivity over Scalar Multiplication)}\\
+tx &= t(x) &&\text{(Scalar Multiplication is an Abelian Group Element)}\\
+tx + (ty) &= (tx + ty)  &&\text{(Commutativity of Scalar Multiplication)}\\
+tx + (tx) &= 2tx &&\text{(Commutativity of Scalar Multiplication)}\\
+tx + (-tx) &= 0 &&\text{(Additive Absorption)}\\
+tx + (-ty) &= (-tx) + ty &&\text{(Additive Distributivity)}\\
+tx + (tx) &= 2tx &&\text{(Additive Commutativity)}\\
+tx + (ty) &= (tx + ty) &&\text{(Associativity of Scalar Multiplication)}\\
+
+\end{align*}
+\]
+</div>
+
+    <h2 id="vector-space">Transition to Vector Spaces</h2>
+
+    <p>
+      Notice that nothing in the above discussion truly depended on geometry.
+      What matters are the algebraic properties.
+    </p>
+
+    <p>
+      This leads to the definition of a vector space:
+    </p>
+      <p><strong> <em>A vector space is a set equipped with addition and scalar multiplication satisfying the above 8 properties.</em></strong></p>
+
+
+    <p>
+      In our case, scalars came from \( \mathbb{R} \).
+      More generally, scalars may come from any field.
+    </p>
+
+  </article>
+
+</main>
+
+<footer role="contentinfo">
+  <p>
+    © 2026 Vinayak Devesan. Content licensed under
+    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">
+      CC BY 4.0
+    </a>.
+  </p>
+</footer>
 
 </body>
 </html>
