@@ -48,6 +48,7 @@
       <li><a href="#scalar">Scalar Multiplication</a></li>
       <li><a href="#properties">Fundamental Properties</a></li>
       <li><a href="#vector-space">Transition to Vector Spaces</a></li>
+      <li><a href="#references">References</a></li>
     </ul>
   </aside>
 
@@ -63,13 +64,12 @@
     <h2 id="introduction">Introduction</h2>
 
     <p>
-      In this lecture series, we begin our study of Linear Algebra by building intuition first.
-      The structure loosely follows Friedberg, Insel, and Spence,
-      <em>Linear Algebra</em>.
+      In this Lecture series we will study the foundations of linear algebra. I will be following the book Linear Algebra by Stephen H. Friedberg, Arnold J. Insel, and Lawrence E. Spence.
+      I will try to build intuition before defining abstract definitions. Helping you connect reality and the subject.
     </p>
 
     <p>
-      Our goal is to understand how algebraic structure emerges naturally from geometric ideas.
+      Our aim for this lecture is try to understand what are vector spaces. So we need to understand what are vectors.
     </p>
 
     <h2 id="vectors">Vectors vs Scalars</h2>
@@ -77,6 +77,7 @@
     <p>
       From physics, we know that vectors have both magnitude and direction.
       Examples include force, displacement, and velocity.
+      They are quantities with that start from some point and show us direction with a specific magnitude
     </p>
 
     <p>
@@ -103,14 +104,15 @@
     <div class="svg-container-small" style="background-color: #1e1e1e">
       <img viewBox="0 0 2000 800" src="Images/Blog_1_Images/Parallelogram.svg">
     </div>
-
-
+    <p><b>Why is this true?</b></p>
+   Vector addition is commutative. So if we add vector x to vector y, or vector y to vector x, we get the same result (think in terms of displacement).
+The expression x + y means we start with vector x, and then place vector y at the endpoint of x.
+Similarly, y + x means we start with vector y, and then place vector x at the endpoint of y (to visualize this, see the figure above).
+Now observe the quadrilateral formed. From Euclidean geometry, we know that it is a parallelogram, since both pairs of opposite sides are equal and parallel.
     <h2 id="algebraic">Algebraic Definition of Addition</h2>
-
     <p>
       Suppose
     </p>
-
     <div class="math">
       \[
       x = (a_1, a_2), \quad y = (b_1, b_2)
@@ -134,13 +136,12 @@
     <h2 id="rn">Vectors in \( \mathbb{R}^n \)</h2>
 
     <p>
-      Any vector in \( \mathbb{R}^2 \) can be written as:
+      Any vector in \( \mathbb{R}^2 \) can be written as \((a_1, a_2) \: | \: a_1, a_2 \in \mathbb{R}
+      \) where \( a_1 \) and \( a_2 \) are the end points. This completely determines any vector in \( \mathbb{R}^2 \).
     </p>
 
-    <div class="math">
-      \[
-      (a_1, a_2), \quad a_1, a_2 \in \mathbb{R}
-      \]
+
+
     </div>
 
     <p>
@@ -156,6 +157,7 @@
     <p>
       Even though we cannot visualize high dimensions,
       the algebraic structure continues to hold.
+      This why we need these algebric structures since beyond \(\mathbb{R}^3\) we cannot visualize vectors.
     </p>
 
     <h2 id="scalar">Scalar Multiplication</h2>
@@ -201,6 +203,7 @@ a(x+y)  &= ax+ay &&\text{(Distributivity of Vector Addition)}\\
 \end{align*}
 \]
 </div>
+    <p>You don't have to take my word for it. Try to break one of these in \(\mathbb{R}^2\) or in any \(\mathbb{R}^n\).</p>
 
     <h2 id="vector-space">Transition to Vector Spaces</h2>
 
