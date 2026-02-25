@@ -79,12 +79,12 @@
     </div>
 
     <h2 id="introduction">Introduction</h2>
-      <p> In the last Lecture you have seen what are vectors and slight less formal definition of Vector Space.
-          Keeping in mind \( \mathbb{R}^n \) as an example of Vector space with scalars from Field \( \mathbb{R}\).
-        We will now formally define what is Field and a Vector Space </p>
+      <p> In the last lecture, you saw what vectors are and a slightly less formal definition of a vector space.
+        Keeping in mind \( \mathbb{R}^n \) as an example of Vector space with scalars from Field \( \mathbb{R} \),
+        we will now formally define what is Field and a Vector Space </p>
       <p> </p>
       <h2 id="field">Definition of Field</h2>
-      <p> A field is a set F equipped with two binary operations: addition and multiplication, satisfying the following properties for all elements a, b, c in F: </p>
+      <p> A field is a set \( \mathbb{F} \) equipped with two binary operations: addition and multiplication, satisfying the following properties for all elements a, b, c in F: </p>
       <ul> <li> <strong>Associativity of addition and multiplication:</strong> a + (b + c) = (a + b) + c, and a &middot; (b &middot; c) = (a &middot; b) &middot; c. </li>
           <li> <strong>Commutativity of addition and multiplication:</strong> a + b = b + a, and a &middot; b = b &middot; a. </li>
           <li> <strong>Additive and multiplicative identity:</strong> There exist distinct elements 0 and 1 in F such that a + 0 = a and a &middot; 1 = a. </li>
@@ -97,8 +97,8 @@
       </p>
 
     <h2 id="example-field">Examples of Fields</h2>
-    So we know that \(\mathbb{R}\) is a field. But what about \(\mathbb{R}^2\)? If anyone asks you such a question, your reply should be "What is the definition of addition and multiplication for the field".
-    Suppose they reply that addition and multiplication is defiend component-wise. Then \(\mathbb{R}^2\) is not a field.
+    So we know that \(\mathbb{R}\) is a field. But what about \( \ mathbb{R}^2 \)? If anyone asks you such a question, your reply should be "What is the definition of addition and multiplication for the field".
+    Suppose they reply that addition and multiplication are defined to be component-wise. Then \( \mathbb{R}^2 \) is not a field.
     <details>
   <summary><strong>Click to see why \( \mathbb{R}^2 \) is not a field</strong></summary>
 
@@ -111,7 +111,7 @@
 
   Consider the nonzero element (1,0).
 
-  If \( \mathbb{R}^2\) were a field, there must exist (a,b) such that:
+  If \( \mathbb{R}^2 \) were a field, there must exist (a,b) such that:
 
   (1,0)(a,b) = (1,1)
 
@@ -119,10 +119,32 @@
 
   Hence (1,0) has no multiplicative inverse.</p>
 
-      <p>Therefore, ℝ² is not a field.</p>
+      <p>Therefore,\( \mathbb{R}^2 \) is not a field.</p>
 
 </details>
-    <p> </p>
+    <p>
+When is \( \mathbb{R}^2 \) a field? Another common field you know of is \( \mathbb{C} \).
+What if we define \( \mathbb{R}^2 \) to have the same definition of addition and multiplication as \( \mathbb{C} \)?
+Yes, this works!
+</p>
+
+<p>
+Define addition on \( \mathbb{R}^2 \) by
+\[
+(a,b) + (c,d) = (a+c,\; b+d).
+\]
+</p>
+
+<p>
+Define multiplication on \( \mathbb{R}^2 \) by
+\[
+(a,b)(c,d) = (ac - bd,\; ad + bc).
+\]
+</p>
+
+<p>
+With these operations, \( \mathbb{R}^2 \) becomes a field. In fact, it behaves exactly like \( \mathbb{C} \).
+</p> <p> </p>
     <h2 id="vector-space">Definition of Vector Spaces</h2>
 
     <h2 id="example-vector-space">Examples of Vector Spaces</h2>
