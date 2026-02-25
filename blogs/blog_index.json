@@ -15,7 +15,7 @@
   },
   {
     "title": "Linear Algebra - Lecture 1",
-    "file": "blogs/Linear_Algebra/blog_1.html",
+    "file": "blogs/Linear_Algebra/Lecture_1.html",
     "category": "Linear Algebra",
     "description": "Linear Algebra Lecture 1 \u2014 Vectors, Scalar Multiplication, and Introduction to Vector Spaces.",
     "date": "February 22, 2026"
@@ -26,5 +26,12 @@
     "category": "Deep Learning",
     "description": "Why Gradient Descent Works - A derivation using Taylor Series expansion.",
     "date": "February 19, 2026"
+  },
+  {
+    "title": "Linear Algebra Lecture 2 \u2013 Vector Spaces and Fields",
+    "file": "blogs/Linear_Algebra/Lecture_2.html",
+    "category": "Linear Algebra",
+    "description": "Linear Algebra Lecture 2 \u2013 Formal definition of fields and vector spaces with examples and foundational intuition.",
+    "date": "2026-02-24"
   }
 ]
