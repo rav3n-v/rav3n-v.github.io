@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B32571Q9D0"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B32571Q9D0');
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Linear Algebra Lecture 2 – Vector Spaces and Fields</title>
+  <meta name="description" content="Linear Algebra Lecture 2 – Formal definition of fields and vector spaces with examples and foundational intuition.">
+  <meta name="keywords" content="Linear Algebra, Vector Spaces, Field Definition, Mathematics Lecture, MSc Mathematics, Abstract Algebra Basics">
+  <meta name="author" content="Vinayak D">
+  <meta name="date" content="2026-02-24">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://rav3n-v.github.io/linear-algebra/lecture-2.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Linear Algebra Lecture 2 – Vector Spaces and Fields">
+  <meta property="og:description" content="Formal definition of fields and vector spaces with examples.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rav3n-v.github.io/linear-algebra/lecture-2.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Linear Algebra Lecture 2 – Vector Spaces and Fields">
+  <meta name="twitter:description" content="Formal definition of fields and vector spaces with examples.">
+
+  <link rel="stylesheet" href="../blog_styles_2.css" />
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body class="dark-theme">
+
+<header role="banner">
+  <div class="header-container">
+    <h1>Linear Algebra</h1>
+    <nav role="navigation">
+      <a href="../../index.html" class="nav-link" aria-label="Back to Home">Home</a>
+    </nav>
+  </div>
+  <p class="subtitle">Building Intuition Before Abstraction</p>
+</header>
+
+<main role="main">
+
+  <aside class="in-page-navigation" role="navigation">
+    <h3 class="in-page-nav-heading">On this page</h3>
+    <ul>
+      <li><a href="#post-title">Lecture 2</a></li>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#field">Definition of Field</a></li>
+      <li><a href="#example-field">Examples of Fields</a></li>
+      <li><a href="#vector-space">Definition of Vector Spaces</a></li>
+      <li><a href="#example-vector-space">Examples of Vector Spaces</a></li>
+      <li><a href="#solved-questions">Are these Vector Spaces?</a></li>
+      <li><a href="#references">References</a></li>
+    </ul>
+  </aside>
+
+  <article role="article" aria-labelledby="post-title" class="content">
+
+    <h2 id="post-title">Lecture 2 — More About Vector Spaces</h2>
+    <p class="meta">Posted on February 24, 2026</p>
+
+    <div class="svg-container" style="background-color: #1e1e1e">
+      <img src="Images/Blog_1_Images/Linear_Opening.svg"
+           alt="Geometric visualization representing vector spaces and intersecting planes">
+    </div>
+
+    <h2 id="introduction">Introduction</h2>
+      <p> In the last Lecture you have seen what are vectors and slight less formal definition of Vector Space.
+          Keeping in mind \( \mathbb{R}^n \) as an example of Vector space with scalars from Field \( \mathbb{R}\).
+        We will now formally define what is Field and a Vector Space </p>
+      <p> </p>
+      <h2 id="field">Definition of Field</h2>
+      <p> A field is a set F equipped with two binary operations: addition and multiplication, satisfying the following properties for all elements a, b, c in F: </p>
+      <ul> <li> <strong>Associativity of addition and multiplication:</strong> a + (b + c) = (a + b) + c, and a &middot; (b &middot; c) = (a &middot; b) &middot; c. </li>
+          <li> <strong>Commutativity of addition and multiplication:</strong> a + b = b + a, and a &middot; b = b &middot; a. </li>
+          <li> <strong>Additive and multiplicative identity:</strong> There exist distinct elements 0 and 1 in F such that a + 0 = a and a &middot; 1 = a. </li>
+          <li> <strong>Additive inverses:</strong> For every a in F, there exists an element in F, denoted −a, such that a + (−a) = 0. </li>
+          <li> <strong>Multiplicative inverses:</strong> For every a ≠ 0 in F, there exists an element in F, denoted a<sup>−1</sup> or 1/a, such that a &middot; a<sup>−1</sup> = 1. </li>
+          <li> <strong>Distributivity:</strong> a &middot; (b + c) = (a &middot; b) + (a &middot; c). </li>
+      </ul>
+      <p> <strong>Note:</strong> Since addition and multiplication are defined as binary operations, the field is automatically closed under these two operations.
+          Therefore, closure does not need to be stated separately.
+      </p>
+
+    <h2 id="example-field">Examples of Fields</h2>
+    So we know that \(\mathbb{R}\) is a field. But what about \(\mathbb{R}^2\)? If anyone asks you such a question, your reply should be "What is the definition of addition and multiplication for the field".
+    Suppose they reply that addition and multiplication is defiend component-wise. Then \(\mathbb{R}^2\) is not a field.
+    <details>
+  <summary><strong>Click to see why \( \mathbb{R}^2 \) is not a field</strong></summary>
+
+  <p>Assume addition and multiplication are defined component-wise:</p>
+
+  (a,b) + (c,d) = (a+c, b+d)
+  (a,b)(c,d) = (ac, bd)
+      <p>
+  The multiplicative identity is (1,1).
+
+  Consider the nonzero element (1,0).
+
+  If \( \mathbb{R}^2\) were a field, there must exist (a,b) such that:
+
+  (1,0)(a,b) = (1,1)
+
+  But (1,0)(a,b) = (a,0), which can never equal (1,1).
+
+  Hence (1,0) has no multiplicative inverse.</p>
+
+      <p>Therefore, ℝ² is not a field.</p>
+
+</details>
+    <p> </p>
+    <h2 id="vector-space">Definition of Vector Spaces</h2>
+
+    <h2 id="example-vector-space">Examples of Vector Spaces</h2>
+
+    <h2 id="solved-questions">Are these Vector Spaces?</h2>
+
+    <h2 id="references">References</h2>
+
+  </article>
+
+</main>
+
+<footer role="contentinfo">
+  <p>&copy; 2026 Vinayak D. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

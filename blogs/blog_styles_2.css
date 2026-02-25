@@ -194,3 +194,20 @@ footer{
     border-bottom: 1px solid #333;
     border-top: 1px solid #333;
 }
+details {
+  background-color: #252526;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 15px 0;
+  border: 1px solid #333;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #f6f9fa; /* nice cyan */
+}
+
+details[open] summary {
+  margin-bottom: 10px;
+}
